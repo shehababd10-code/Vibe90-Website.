@@ -207,7 +207,7 @@
       </div>
 
       <p class="meta" id="release-meta">
-        الإصدار: v1.0.0 · حجم الملف: سيتم إضافته
+        الإصدار: v1.0.0 · حجم الملف: 68.5 MB
       </p>
 
       <div class="tagline">PLAY <i>•</i> COMPETE <i>•</i> BE LEGEND</div>
@@ -373,8 +373,9 @@
         </p>
       </article>
     </div>
-    </section>
-      <section class="section screenshots" id="screenshots">
+  </section>
+
+  <section class="section screenshots" id="screenshots">
     <div class="section-heading">
       <p class="eyebrow">INSIDE THE GAME</p>
       <h2 data-ar="لقطات من Vibe90"
@@ -467,8 +468,7 @@
       </article>
     </div>
   </section>
-
-  <section class="lower-grid">
+    <section class="lower-grid">
     <article class="panel" id="updates">
       <p class="eyebrow">LATEST NEWS</p>
       <h2 data-ar="آخر إصدار"
@@ -477,16 +477,16 @@
       <div class="update-row">
         <span class="tag" id="update-version">v1.0.0</span>
         <span id="update-date"
-              data-ar="سيتم تحديد تاريخ الإصدار"
-              data-en="Release date to be announced">
-          سيتم تحديد تاريخ الإصدار
+              data-ar="2026-11-23"
+              data-en="2026-11-23">
+          2026-11-23
         </span>
       </div>
 
       <p id="update-notes"
-         data-ar="سيتم نشر تفاصيل التحديث هنا عند تجهيز الإصدار القادم."
-         data-en="Update details will be published here when the next release is ready.">
-        سيتم نشر تفاصيل التحديث هنا عند تجهيز الإصدار القادم.
+         data-ar="الإصدار الرسمي الأول من Vibe90. العب مباريات تكتيكية مع الأصدقاء، وأنشئ دورياتك، واستمتع بمباريات الذكاء الاصطناعي."
+         data-en="The first official release of Vibe90. Play tactical matches with friends, create leagues, and enjoy matches against AI.">
+        الإصدار الرسمي الأول من Vibe90. العب مباريات تكتيكية مع الأصدقاء، وأنشئ دورياتك، واستمتع بمباريات الذكاء الاصطناعي.
       </p>
     </article>
 
@@ -590,9 +590,9 @@
       description: 'اكتشف Vibe90، لعبة كرة قدم تكتيكية للأندرويد. كوّن فريقك، اختر التشكيلة، وضع خطتك ونافس أصدقاءك والذكاء الاصطناعي.',
       release: 'الإصدار',
       size: 'حجم الملف',
-      notAvailable: 'سيتم إضافته',
-      date: 'سيتم تحديد تاريخ الإصدار',
-      notes: 'سيتم نشر تفاصيل التحديث هنا عند تجهيز الإصدار القادم.',
+      notAvailable: 'غير متاح',
+      date: 'لم يتم تحديد تاريخ الإصدار',
+      notes: 'لا توجد تفاصيل لهذا التحديث حتى الآن.',
       support: 'تواصل مع الدعم',
       button: 'تحميل Vibe90 APK',
       language: 'EN',
@@ -605,8 +605,8 @@
       release: 'Version',
       size: 'File size',
       notAvailable: 'Not available',
-      date: 'Release date to be announced',
-      notes: 'Update details will be published here when the next release is ready.',
+      date: 'Release date not available',
+      notes: 'No update details are available yet.',
       support: 'Contact Support',
       button: 'Download Vibe90 APK',
       language: 'عربي',
@@ -616,7 +616,8 @@
 
   function setText(id, value) {
     const element = document.getElementById(id);
-    if (element && value) {
+
+    if (element && value !== undefined && value !== null && value !== '') {
       element.textContent = value;
     }
   }
@@ -644,6 +645,7 @@
     document.title = t.title;
 
     const description = document.querySelector('meta[name="description"]');
+
     if (description) {
       description.content = t.description;
     }
@@ -662,27 +664,40 @@
     if (twitterTitle) twitterTitle.content = t.title;
     if (twitterDescription) twitterDescription.content = t.description;
 
+    // زر تغيير اللغة
     setText('language-switch', t.language);
 
+    // رقم الإصدار في الشريط العلوي
+    setText(
+      'top-version',
+      `${t.release} ${v}`
+    );
+
+    // بيانات الإصدار وحجم ملف التحميل
     setText(
       'release-meta',
       `${t.release}: ${v} · ${t.size}: ${c.apkSize || t.notAvailable}`
     );
 
+    // رقم الإصدار في قسم آخر التحديثات
     setText('update-version', v);
 
+    // تاريخ الإصدار: الإنجليزي يستخدم التاريخ الإنجليزي إن وُجد،
+    // وإلا يستخدم التاريخ الأساسي الموجود في ملف الإعدادات.
     const releaseDate = isEnglish
-      ? (c.releaseDateEn || t.date)
+      ? (c.releaseDateEn || c.releaseDate || t.date)
       : (c.releaseDate || t.date);
 
+    // تفاصيل التحديث: الإنجليزي يستخدم النص الإنجليزي إن وُجد،
+    // وإلا يستخدم تفاصيل التحديث الأساسية.
     const releaseNotes = isEnglish
-      ? (c.releaseNotesEn || t.notes)
+      ? (c.releaseNotesEn || c.releaseNotes || t.notes)
       : (c.releaseNotes || t.notes);
 
     setText('update-date', releaseDate);
     setText('update-notes', releaseNotes);
 
-    // تحديث زر التحميل بأمان
+    // تحديث زر التحميل
     const download = document.getElementById('download-button');
 
     if (download) {
@@ -699,7 +714,7 @@
       }
     }
 
-    // تحديث رابط الدعم بأمان
+    // تحديث رابط الدعم
     const support = document.getElementById('support-link');
 
     if (support) {
@@ -714,20 +729,18 @@
       }
     }
 
+    // حفظ اللغة المختارة
     try {
       localStorage.setItem('vibe90-language', currentLang);
     } catch (error) {
-      // The page still works if local storage is unavailable.
+      // الموقع يعمل حتى لو التخزين المحلي غير متاح.
     }
   }
 
-  document.querySelectorAll('#top-version, #update-version').forEach(element => {
-    element.textContent = v;
-  });
-
+  // عرض السنة الحالية
   setText('year', new Date().getFullYear());
 
-  // إضافة حدث تغيير اللغة بأمان
+  // زر تغيير اللغة
   const languageSwitch = document.getElementById('language-switch');
 
   if (languageSwitch) {
@@ -737,6 +750,7 @@
     });
   }
 
+  // استرجاع اللغة المحفوظة
   let savedLanguage = 'ar';
 
   try {
@@ -745,9 +759,10 @@
     savedLanguage = 'ar';
   }
 
+  // تطبيق اللغة والبيانات عند فتح الموقع
   setLanguage(savedLanguage);
 })();
 </script>
 
 </body>
-  </html>
+</html>
