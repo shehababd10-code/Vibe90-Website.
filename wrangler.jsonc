@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "vibe90",
+  "compatibility_date": "2026-11-23",
+  "assets": {
+    "directory": "./public"
+  }
+}
