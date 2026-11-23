@@ -1,16 +1,15 @@
+
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
-  <meta name="google-site-verification" content="mmnnfgjs10wsLAnp_Jb2hRubJHifNbc8Oi9LZWPlL54" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071326">
 
-  <title>Vibe90 | لعبة كرة قدم تكتيكية ومنافسة الأصدقاء</title>
+  <meta name="google-site-verification" content="mmnnfgjs10wsLAnp_Jb2hRubJHifNbc8Oi9LZWPlL54">
 
-  <meta name="description" content="اكتشف Vibe90، لعبة كرة قدم تكتيكية للأندرويد. كوّن فريقك واختر تشكيلتك وضع خطتك ونافس أصدقاءك والذكاء الاصطناعي وشارك في الدوريات.">
-
+  <title>Vibe90 | لعبة كرة قدم تكتيكية</title>
+  <meta name="description" content="اكتشف Vibe90، لعبة كرة قدم تكتيكية للأندرويد. كوّن فريقك واختر تشكيلتك وضع خطتك ونافس أصدقاءك والذكاء الاصطناعي.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://vibe90.shehababd10.workers.dev/">
 
@@ -27,80 +26,409 @@
   <meta name="twitter:description" content="كوّن فريقك وخطط لمبارياتك ونافس أصدقاءك.">
   <meta name="twitter:image" content="https://vibe90.shehababd10.workers.dev/assets/vibe90-logo.png">
 
-  <script type="application/ld+json">
+  <script type="application/ld+json" id="app-schema">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Vibe90",
     "applicationCategory": "GameApplication",
     "operatingSystem": "Android",
-    "inLanguage": "ar",
-    "description": "لعبة كرة قدم تكتيكية لبناء التشكيلات ووضع الخطط ومنافسة الأصدقاء واللعب ضد الذكاء الاصطناعي.",
+    "inLanguage": ["ar", "en"],
+    "description": "A tactical football game for building squads, creating tactics and competing with friends.",
     "url": "https://vibe90.shehababd10.workers.dev/",
     "image": "https://vibe90.shehababd10.workers.dev/assets/vibe90-logo.png"
   }
   </script>
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .language-switch {
+      background: transparent;
+      color: #fff;
+      border: 1px solid #d5a843;
+      border-radius: 8px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-inline-start: 12px;
+    }
+
+    .language-switch:hover {
+      background: #d5a843;
+      color: #071326;
+    }
+
+    [dir="ltr"] .topbar,
+    [dir="ltr"] footer {
+      direction: ltr;
+    }
+
+    [dir="ltr"] .hero-copy,
+    [dir="ltr"] .section-heading,
+    [dir="ltr"] .panel {
+      text-align: left;
+    }
+
+    [dir="ltr"] .hero-actions {
+      justify-content: flex-start;
+    }
+
+    [dir="ltr"] .feature {
+      text-align: left;
+    }
+  </style>
 </head>
 
 <body>
+
 <header class="topbar">
-  <a class="brand" href="#home"><img class="brand-logo" src="assets/vibe90-logo.png" alt="شعار Vibe90"><span>VIBE<span class="gold">90</span></span></a>
-  <nav><a href="#about">عن اللعبة</a><a href="#features">المميزات</a><a href="#screenshots">صور اللعبة</a><a href="#updates">التحديثات</a><a href="#support">الدعم</a></nav>
+  <a class="brand" href="#home">
+    <img class="brand-logo" src="assets/vibe90-logo.png" alt="Vibe90 Logo">
+    <span>VIBE<span class="gold">90</span></span>
+  </a>
+
+  <nav>
+    <a href="#about" data-ar="عن اللعبة" data-en="About">عن اللعبة</a>
+    <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
+    <a href="#screenshots" data-ar="صور اللعبة" data-en="Screenshots">صور اللعبة</a>
+    <a href="#updates" data-ar="التحديثات" data-en="Updates">التحديثات</a>
+    <a href="#support" data-ar="الدعم" data-en="Support">الدعم</a>
+  </nav>
+
   <span class="version" id="top-version">الإصدار v1.0.0</span>
+  <button class="language-switch" id="language-switch" type="button">EN</button>
 </header>
+
 <main>
+
   <section class="hero" id="home">
     <div class="hero-copy">
+
       <p class="eyebrow">FOOTBALL MANAGER EXPERIENCE</p>
+
       <h1>VIBE<span class="gold">90</span></h1>
-      <h2>خطّط. نافس. واصنع أسطورتك.</h2>
-      <p class="lead">كوّن تشكيلتك، اختَر خطتك، ووجّه فريقك بتعليماتك. نافس أصدقاءك أو لاعبين عشوائيين أو الذكاء الاصطناعي، واصنع دوريّك الخاص.</p>
-      <div class="hero-actions"><a class="download disabled" id="download-button" href="#" aria-disabled="true">قريبًا — تحميل APK</a><a class="secondary" href="#screenshots">اكتشف اللعبة</a></div>
-      <p class="meta" id="release-meta">الإصدار: v1.0.0 · حجم الملف: سيتم إضافته</p>
-      <p class="notice">رابط التحميل الرسمي سيُفعّل بعد تجهيز نسخة الإصدار للنشر.</p>
+
+      <h2 data-ar="خطّط. نافس. واصنع أسطورتك."
+          data-en="Plan. Compete. Build Your Legacy.">
+        خطّط. نافس. واصنع أسطورتك.
+      </h2>
+
+      <p class="lead"
+         data-ar="كوّن تشكيلتك، اختَر خطتك، ووجّه فريقك بتعليماتك. نافس أصدقاءك أو لاعبين عشوائيين أو الذكاء الاصطناعي، واصنع دوريّك الخاص."
+         data-en="Build your squad, choose your tactics, and lead your team. Compete with friends, random players, or AI, and create your own league.">
+        كوّن تشكيلتك، اختَر خطتك، ووجّه فريقك بتعليماتك. نافس أصدقاءك أو لاعبين عشوائيين أو الذكاء الاصطناعي، واصنع دوريّك الخاص.
+      </p>
+
+      <div class="hero-actions">
+        <a class="download disabled" id="download-button" href="#" aria-disabled="true">
+          تحميل Vibe90 APK
+        </a>
+
+        <a class="secondary" href="#screenshots"
+           data-ar="اكتشف اللعبة" data-en="Explore the Game">
+          اكتشف اللعبة
+        </a>
+      </div>
+
+      <p class="meta" id="release-meta">
+        الإصدار: v1.0.0 · حجم الملف: سيتم إضافته
+      </p>
+
       <div class="tagline">PLAY <i>•</i> COMPETE <i>•</i> BE LEGEND</div>
     </div>
-    <div class="hero-art"><div class="halo"></div><img src="assets/vibe90-logo.png" alt="شعار Vibe90" class="hero-logo"><span class="floating f1">90'</span><span class="floating f2">⚽</span></div>
-  </section>
 
-  <section class="stats" aria-label="مميزات اللعبة"><div><strong>11</strong><span>لاعب في التشكيلة</span></div><div><strong>∞</strong><span>خطط وتكتيكات</span></div><div><strong>⚔</strong><span>منافسات ودوريات</span></div></section>
-
-  <section class="section" id="about"><div class="section-heading"><p class="eyebrow">WELCOME TO VIBE90</p><h2>أنت المدير.. والقرار قرارك</h2><p>Vibe90 لعبة كرة قدم تكتيكية تجمع بين بناء التشكيلة، ووضع الخطط والتعليمات بحرية، وخوض مباريات مع الأصدقاء أو لاعبين عشوائيين أو ضد الذكاء الاصطناعي. أنشئ دورياتك الخاصة مع أصدقائك أو انضم إلى دوريات قائمة، واختبر مهاراتك في ركلات الترجيح.</p></div>
-    <div class="feature-grid" id="features">
-      <article class="feature"><b>01</b><div class="feature-icon">🏆</div><h3>الدوريات</h3><p>أنشئ دوريًا خاصًا مع أصدقائك أو انضم إلى دوريات أنشأها لاعبون آخرون، وتنافس على الصدارة.</p></article>
-      <article class="feature"><b>02</b><div class="feature-icon">👥</div><h3>مباريات الأصدقاء والعشوائي</h3><p>تحدَّ أصدقاءك في مباريات تكتيكية، أو ادخل مواجهة مع لاعب عشوائي.</p></article>
-      <article class="feature"><b>03</b><div class="feature-icon">♟</div><h3>التكتيك والتشكيلات</h3><p>اختَر تشكيلتك ومراكز لاعبيك، وحدد تعليمات فريقك بحرية وفق أسلوبك.</p></article>
-      <article class="feature"><b>04</b><div class="feature-icon">⚽</div><h3>الذكاء الاصطناعي</h3><p>اختبر أفكارك أمام الذكاء الاصطناعي، والعب مباريات وضربات جزاء ضده.</p></article>
-      <article class="feature"><b>05</b><div class="feature-icon">🥅</div><h3>ركلات الترجيح</h3><p>ادخل تحديات ركلات الترجيح مع أصدقائك، واحسم المواجهة من نقطة الجزاء.</p></article>
-      <article class="feature"><b>06</b><div class="feature-icon">🧠</div><h3>أنت صاحب القرار</h3><p>لا تكتفِ باختيار اللاعبين؛ ارسم خطتك واكتب تعليماتك وجرّب أفكارًا تكتيكية مختلفة.</p></article>
+    <div class="hero-art">
+      <div class="halo"></div>
+      <img src="assets/vibe90-logo.png" alt="Vibe90 Logo" class="hero-logo">
+      <span class="floating f1">90'</span>
+      <span class="floating f2">⚽</span>
     </div>
   </section>
 
-  <section class="section screenshots" id="screenshots"><div class="section-heading"><p class="eyebrow">INSIDE THE GAME</p><h2>لقطات من Vibe90</h2><p>شوف بعض الشاشات الحقيقية من داخل اللعبة.</p></div>
+  <section class="stats" aria-label="Game Features">
+    <div>
+      <strong>11</strong>
+      <span data-ar="لاعب في التشكيلة" data-en="Players in a Squad">لاعب في التشكيلة</span>
+    </div>
+    <div>
+      <strong>∞</strong>
+      <span data-ar="خطط وتكتيكات" data-en="Tactics & Strategies">خطط وتكتيكات</span>
+    </div>
+    <div>
+      <strong>⚔</strong>
+      <span data-ar="منافسات ودوريات" data-en="Competitions & Leagues">منافسات ودوريات</span>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+
+    <div class="section-heading">
+      <p class="eyebrow">WELCOME TO VIBE90</p>
+
+      <h2 data-ar="أنت المدير.. والقرار قرارك"
+          data-en="You're the Manager. You're in Control.">
+        أنت المدير.. والقرار قرارك
+      </h2>
+
+      <p
+        data-ar="Vibe90 لعبة كرة قدم تكتيكية تجمع بين بناء التشكيلة، ووضع الخطط والتعليمات بحرية، وخوض مباريات مع الأصدقاء أو لاعبين عشوائيين أو ضد الذكاء الاصطناعي. أنشئ دورياتك الخاصة مع أصدقائك أو انضم إلى دوريات قائمة، واختبر مهاراتك في ركلات الترجيح."
+        data-en="Vibe90 is a tactical football game where you build your squad, create strategies, and compete against friends, random players, or AI. Create your own leagues, join existing ones, and test your skills in penalty shootouts.">
+        Vibe90 لعبة كرة قدم تكتيكية تجمع بين بناء التشكيلة، ووضع الخطط والتعليمات بحرية، وخوض مباريات مع الأصدقاء أو لاعبين عشوائيين أو ضد الذكاء الاصطناعي. أنشئ دورياتك الخاصة مع أصدقائك أو انضم إلى دوريات قائمة، واختبر مهاراتك في ركلات الترجيح.
+      </p>
+    </div>
+
+    <div class="feature-grid" id="features">
+
+      <article class="feature">
+        <b>01</b>
+        <div class="feature-icon">🏆</div>
+        <h3 data-ar="الدوريات" data-en="Leagues">الدوريات</h3>
+        <p data-ar="أنشئ دوريًا خاصًا مع أصدقائك أو انضم إلى دوريات أنشأها لاعبون آخرون، وتنافس على الصدارة."
+           data-en="Create your own league with friends or join leagues created by other players and compete for the top spot.">
+          أنشئ دوريًا خاصًا مع أصدقائك أو انضم إلى دوريات أنشأها لاعبون آخرون، وتنافس على الصدارة.
+        </p>
+      </article>
+
+      <article class="feature">
+        <b>02</b>
+        <div class="feature-icon">👥</div>
+        <h3 data-ar="مباريات الأصدقاء والعشوائي" data-en="Friend & Random Matches">مباريات الأصدقاء والعشوائي</h3>
+        <p data-ar="تحدَّ أصدقاءك في مباريات تكتيكية، أو ادخل مواجهة مع لاعب عشوائي."
+           data-en="Challenge your friends in tactical matches or face a random opponent.">
+          تحدَّ أصدقاءك في مباريات تكتيكية، أو ادخل مواجهة مع لاعب عشوائي.
+        </p>
+      </article>
+
+      <article class="feature">
+        <b>03</b>
+        <div class="feature-icon">♟</div>
+        <h3 data-ar="التكتيك والتشكيلات" data-en="Tactics & Formations">التكتيك والتشكيلات</h3>
+        <p data-ar="اختَر تشكيلتك ومراكز لاعبيك، وحدد تعليمات فريقك بحرية وفق أسلوبك."
+           data-en="Choose your formation and player positions, then set your team's instructions your way.">
+          اختَر تشكيلتك ومراكز لاعبيك، وحدد تعليمات فريقك بحرية وفق أسلوبك.
+        </p>
+      </article>
+
+      <article class="feature">
+        <b>04</b>
+        <div class="feature-icon">⚽</div>
+        <h3 data-ar="الذكاء الاصطناعي" data-en="Artificial Intelligence">الذكاء الاصطناعي</h3>
+        <p data-ar="اختبر أفكارك أمام الذكاء الاصطناعي، والعب مباريات وضربات جزاء ضده."
+           data-en="Test your strategies against AI and play matches and penalty shootouts.">
+          اختبر أفكارك أمام الذكاء الاصطناعي، والعب مباريات وضربات جزاء ضده.
+        </p>
+      </article>
+
+      <article class="feature">
+        <b>05</b>
+        <div class="feature-icon">🥅</div>
+        <h3 data-ar="ركلات الترجيح" data-en="Penalty Shootouts">ركلات الترجيح</h3>
+        <p data-ar="ادخل تحديات ركلات الترجيح مع أصدقائك، واحسم المواجهة من نقطة الجزاء."
+           data-en="Take on your friends in penalty shootouts and decide who wins from the spot.">
+          ادخل تحديات ركلات الترجيح مع أصدقائك، واحسم المواجهة من نقطة الجزاء.
+        </p>
+      </article>
+
+      <article class="feature">
+        <b>06</b>
+        <div class="feature-icon">🧠</div>
+        <h3 data-ar="أنت صاحب القرار" data-en="You're in Control">أنت صاحب القرار</h3>
+        <p data-ar="لا تكتفِ باختيار اللاعبين؛ ارسم خطتك واكتب تعليماتك وجرّب أفكارًا تكتيكية مختلفة."
+           data-en="Do more than pick players. Design your tactics, set instructions, and experiment with different strategies.">
+          لا تكتفِ باختيار اللاعبين؛ ارسم خطتك واكتب تعليماتك وجرّب أفكارًا تكتيكية مختلفة.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section screenshots" id="screenshots">
+
+    <div class="section-heading">
+      <p class="eyebrow">INSIDE THE GAME</p>
+      <h2 data-ar="لقطات من Vibe90" data-en="Vibe90 Screenshots">لقطات من Vibe90</h2>
+      <p data-ar="شوف بعض الشاشات الحقيقية من داخل اللعبة."
+         data-en="Take a look at real screenshots from the game.">
+        شوف بعض الشاشات الحقيقية من داخل اللعبة.
+      </p>
+    </div>
+
     <div class="gallery">
-      <figure class="shot"><img src="assets/home-screen.jpg" alt="الشاشة الرئيسية للعبة Vibe90"><figcaption>الرئيسية ومركز اللعبة</figcaption></figure>
-      <figure class="shot"><img src="assets/login-screen.jpg" alt="شاشة تسجيل الدخول في Vibe90"><figcaption>تسجيل الدخول</figcaption></figure>
-      <figure class="shot"><img src="assets/match-lineup.jpg" alt="تشكيلة الفريق داخل مباراة كرة القدم"><figcaption>بناء تشكيلة الفريق</figcaption></figure>
-      <figure class="shot"><img src="assets/tactics-screen.jpg" alt="اختيار الخطط والتكتيكات في Vibe90"><figcaption>الخطط والتكتيكات</figcaption></figure>
+
+      <figure class="shot">
+        <img src="assets/home-screen.jpg" alt="Vibe90 Home Screen">
+        <figcaption data-ar="الرئيسية ومركز اللعبة" data-en="Home Screen">الرئيسية ومركز اللعبة</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="assets/login-screen.jpg" alt="Vibe90 Login Screen">
+        <figcaption data-ar="تسجيل الدخول" data-en="Login Screen">تسجيل الدخول</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="assets/match-lineup.jpg" alt="Vibe90 Team Lineup">
+        <figcaption data-ar="بناء تشكيلة الفريق" data-en="Team Lineup">بناء تشكيلة الفريق</figcaption>
+      </figure>
+
+      <figure class="shot">
+        <img src="assets/tactics-screen.jpg" alt="Vibe90 Tactics Screen">
+        <figcaption data-ar="الخطط والتكتيكات" data-en="Tactics & Strategies">الخطط والتكتيكات</figcaption>
+      </figure>
+
     </div>
   </section>
 
   <section class="lower-grid">
-    <article class="panel" id="updates"><p class="eyebrow">LATEST NEWS</p><h2>آخر إصدار</h2><div class="update-row"><span class="tag" id="update-version">v1.0.0</span><span id="update-date">سيتم تحديد تاريخ الإصدار</span></div><p id="update-notes">سيتم نشر تفاصيل التحديث هنا عند تجهيز الإصدار القادم.</p></article>
-    <article class="panel" id="support"><p class="eyebrow">NEED HELP?</p><h2>الدعم والتواصل</h2><p>للاستفسارات أو الإبلاغ عن مشكلة، تواصل مع فريق Vibe90 عبر القنوات الرسمية.</p><a class="secondary" id="support-link" href="#">سيتم إضافة وسيلة التواصل</a></article>
+
+    <article class="panel" id="updates">
+      <p class="eyebrow">LATEST NEWS</p>
+      <h2 data-ar="آخر إصدار" data-en="Latest Release">آخر إصدار</h2>
+
+      <div class="update-row">
+        <span class="tag" id="update-version">v1.0.0</span>
+        <span id="update-date">سيتم تحديد تاريخ الإصدار</span>
+      </div>
+
+      <p id="update-notes">سيتم نشر تفاصيل التحديث هنا عند تجهيز الإصدار القادم.</p>
+    </article>
+
+    <article class="panel" id="support">
+      <p class="eyebrow">NEED HELP?</p>
+      <h2 data-ar="الدعم والتواصل" data-en="Support & Contact">الدعم والتواصل</h2>
+
+      <p data-ar="للاستفسارات أو الإبلاغ عن مشكلة، تواصل مع فريق Vibe90 عبر القنوات الرسمية."
+         data-en="For questions or bug reports, contact the Vibe90 team through the official channels.">
+        للاستفسارات أو الإبلاغ عن مشكلة، تواصل مع فريق Vibe90 عبر القنوات الرسمية.
+      </p>
+
+      <a class="secondary" id="support-link" href="#">
+        تواصل مع الدعم
+      </a>
+    </article>
+
   </section>
+
 </main>
-<footer><a class="brand footer-brand" href="#home"><img src="assets/vibe90-logo.png" alt=""><span>VIBE<span class="gold">90</span></span></a><span>© <span id="year"></span> Vibe90. جميع الحقوق محفوظة.</span><span>PLAY • COMPETE • BE LEGEND</span></footer>
-<script src="site-config.js"></script><script>
-const c=window.VIBE90_CONFIG||{},v=c.version||'v1.0.0';
-document.querySelectorAll('#top-version,#update-version').forEach(x=>x.textContent=v);
-document.getElementById('release-meta').textContent=`الإصدار: ${v} · حجم الملف: ${c.apkSize||'سيتم إضافته'}`;
-document.getElementById('update-date').textContent=c.releaseDate||'سيتم تحديد تاريخ الإصدار';
-document.getElementById('update-notes').textContent=c.releaseNotes||'سيتم نشر تفاصيل التحديث هنا.';
-if(c.apkUrl){const a=document.getElementById('download-button');a.href=c.apkUrl;a.textContent='تحميل Vibe90 APK';a.classList.remove('disabled');a.removeAttribute('aria-disabled');}
-if(c.supportUrl){const a=document.getElementById('support-link');a.href=c.supportUrl;a.textContent=c.supportLabel||'تواصل مع الدعم';}
-document.getElementById('year').textContent=new Date().getFullYear();
+
+<footer>
+  <a class="brand footer-brand" href="#home">
+    <img src="assets/vibe90-logo.png" alt="Vibe90">
+    <span>VIBE<span class="gold">90</span></span>
+  </a>
+
+  <span>© <span id="year"></span> Vibe90. جميع الحقوق محفوظة.</span>
+  <span>PLAY • COMPETE • BE LEGEND</span>
+</footer>
+
+<script src="site-config.js"></script>
+
+<script>
+const c = window.VIBE90_CONFIG || {};
+const v = c.version || 'v1.0.0';
+
+const translations = {
+  ar: {
+    title: 'Vibe90 | لعبة كرة قدم تكتيكية',
+    description: 'اكتشف Vibe90، لعبة كرة قدم تكتيكية للأندرويد. كوّن فريقك واختر تشكيلتك وضع خطتك ونافس أصدقاءك والذكاء الاصطناعي.',
+    release: 'الإصدار',
+    size: 'حجم الملف',
+    notAvailable: 'سيتم إضافته',
+    date: 'سيتم تحديد تاريخ الإصدار',
+    notes: 'سيتم نشر تفاصيل التحديث هنا.',
+    support: 'تواصل مع الدعم',
+    button: 'تحميل Vibe90 APK',
+    language: 'EN',
+    rights: 'جميع الحقوق محفوظة.'
+  },
+  en: {
+    title: 'Vibe90 | Tactical Football Game',
+    description: 'Discover Vibe90, an Android tactical football game. Build your squad, create strategies, and compete with friends and AI.',
+    release: 'Version',
+    size: 'File size',
+    notAvailable: 'Coming soon',
+    date: 'Release date to be announced',
+    notes: 'Update details will be published here.',
+    support: 'Contact Support',
+    button: 'Download Vibe90 APK',
+    language: 'عربي',
+    rights: 'All rights reserved.'
+  }
+};
+
+function setLanguage(lang) {
+  const t = translations[lang] || translations.ar;
+  const isEnglish = lang === 'en';
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isEnglish ? 'ltr' : 'rtl';
+
+  document.querySelectorAll('[data-ar][data-en]').forEach(el => {
+    el.textContent = isEnglish ? el.dataset.en : el.dataset.ar;
+  });
+
+  document.title = t.title;
+  document.querySelector('meta[name="description"]').content = t.description;
+
+  document.querySelector('meta[property="og:title"]').content = t.title;
+  document.querySelector('meta[property="og:description"]').content = t.description;
+  document.querySelector('meta[property="og:locale"]').content = isEnglish ? 'en_US' : 'ar_EG';
+
+  document.querySelector('meta[name="twitter:title"]').content = t.title;
+  document.querySelector('meta[name="twitter:description"]').content = t.description;
+
+  document.getElementById('language-switch').textContent = t.language;
+
+  document.getElementById('release-meta').textContent =
+    `${t.release}: ${v} · ${t.size}: ${c.apkSize || t.notAvailable}`;
+
+  document.getElementById('update-date').textContent =
+    c.releaseDate || t.date;
+
+  document.getElementById('update-notes').textContent =
+    c.releaseNotes || t.notes;
+
+  const download = document.getElementById('download-button');
+
+  if (c.apkUrl) {
+    download.href = c.apkUrl;
+    download.textContent = t.button;
+    download.classList.remove('disabled');
+    download.removeAttribute('aria-disabled');
+  } else {
+    download.textContent = t.button;
+  }
+
+  const support = document.getElementById('support-link');
+
+  if (c.supportUrl) {
+    support.href = c.supportUrl;
+    support.textContent = c.supportLabel || t.support;
+  } else {
+    support.textContent = t.support;
+  }
+
+  document.querySelector('footer span span')?.parentElement &&
+    (document.querySelector('footer span span').parentElement.lastChild.textContent = ' ' + t.rights);
+
+  localStorage.setItem('vibe90-language', lang);
+}
+
+document.getElementById('language-switch').addEventListener('click', () => {
+  const current = document.documentElement.lang;
+  setLanguage(current === 'ar' ? 'en' : 'ar');
+});
+
+document.querySelectorAll('#top-version, #update-version').forEach(el => {
+  el.textContent = v;
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const savedLanguage = localStorage.getItem('vibe90-language');
+setLanguage(savedLanguage === 'en' ? 'en' : 'ar');
 </script>
-</body></html>
+
+</body>
+    </html>
+          
