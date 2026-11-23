@@ -79,6 +79,65 @@
     [dir="ltr"] .feature {
       text-align: left;
     }
+
+    /* Vibe90 Community */
+    .community-panel {
+      grid-column: 1 / -1;
+    }
+
+    .community-intro {
+      margin-bottom: 20px;
+    }
+
+    .community-groups {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .community-card {
+      background: rgba(213, 168, 67, 0.07);
+      border: 1px solid rgba(213, 168, 67, 0.35);
+      border-radius: 14px;
+      padding: 22px;
+      text-align: center;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .community-card:hover {
+      transform: translateY(-4px);
+      border-color: #d5a843;
+    }
+
+    .community-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .community-card h3 {
+      margin: 8px 0;
+      color: #d5a843;
+    }
+
+    .community-card p {
+      margin-bottom: 18px;
+    }
+
+    .community-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      min-width: 180px;
+    }
+
+    @media (max-width: 600px) {
+      .community-groups {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -97,6 +156,7 @@
     <a href="#features" data-ar="المميزات" data-en="Features">المميزات</a>
     <a href="#screenshots" data-ar="صور اللعبة" data-en="Screenshots">صور اللعبة</a>
     <a href="#updates" data-ar="التحديثات" data-en="Updates">التحديثات</a>
+    <a href="#community" data-ar="عائلة Vibe90" data-en="Vibe90 Family">عائلة Vibe90</a>
     <a href="#support" data-ar="الدعم" data-en="Support">الدعم</a>
   </nav>
 
@@ -367,6 +427,72 @@
       </p>
     </article>
 
+    <!-- Vibe90 Community -->
+    <article class="panel community-panel" id="community">
+      <p class="eyebrow">VIBE90 COMMUNITY</p>
+
+      <h2 data-ar="كن جزءًا من عائلة Vibe90"
+          data-en="Be Part of the Vibe90 Family">
+        كن جزءًا من عائلة Vibe90
+      </h2>
+
+      <p class="community-intro"
+         data-ar="اللعبة أحلى مع الأصدقاء! انضم إلى مجتمع Vibe90 وتواصل مع اللاعبين وشاركنا التحديات والمباريات."
+         data-en="The game is better with friends! Join the Vibe90 community, connect with players, and share matches and challenges.">
+        اللعبة أحلى مع الأصدقاء! انضم إلى مجتمع Vibe90 وتواصل مع اللاعبين وشاركنا التحديات والمباريات.
+      </p>
+
+      <div class="community-groups">
+
+        <div class="community-card">
+          <div class="community-icon">⚽</div>
+
+          <h3 data-ar="جروب Vibe90 الأول"
+              data-en="Vibe90 Group One">
+            جروب Vibe90 الأول
+          </h3>
+
+          <p data-ar="انضم إلى اللاعبين وكن جزءًا من مجتمع اللعبة."
+             data-en="Join the players and become part of the game community.">
+            انضم إلى اللاعبين وكن جزءًا من مجتمع اللعبة.
+          </p>
+
+          <a class="secondary community-join"
+             href="https://chat.whatsapp.com/FaxXRFbc6zCJtNxuuEUBun?s=cl&p=a&iam=2"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-ar="انضم للجروب الأول"
+             data-en="Join Group One">
+            انضم للجروب الأول
+          </a>
+        </div>
+
+        <div class="community-card">
+          <div class="community-icon">🏆</div>
+
+          <h3 data-ar="جروب Vibe90 الثاني"
+              data-en="Vibe90 Group Two">
+            جروب Vibe90 الثاني
+          </h3>
+
+          <p data-ar="مكان إضافي للتواصل والمشاركة مع عائلة Vibe90."
+             data-en="Another place to connect and share with the Vibe90 family.">
+            مكان إضافي للتواصل والمشاركة مع عائلة Vibe90.
+          </p>
+
+          <a class="secondary community-join"
+             href="https://chat.whatsapp.com/EWfBtO5snvl75d6SBLFL6h?s=cl&p=a&iam=2"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-ar="انضم للجروب الثاني"
+             data-en="Join Group Two">
+            انضم للجروب الثاني
+          </a>
+        </div>
+
+      </div>
+    </article>
+
     <article class="panel" id="support">
       <p class="eyebrow">NEED HELP?</p>
       <h2 data-ar="الدعم والتواصل"
@@ -575,5 +701,4 @@
 </script>
 
 </body>
-  </html>
-  
+</html>
