@@ -63,6 +63,7 @@
       background: rgba(8,25,44,.88);
       box-shadow: 0 12px 35px rgba(0,0,0,.18);
       backdrop-filter: blur(14px);
+      animation: topbarEnter .8s ease both;
     }
 
     .topbar .brand {
@@ -80,6 +81,8 @@
       object-fit: cover;
       border-radius: 50%;
       border: 1px solid #d5a843;
+      box-shadow: 0 0 18px rgba(213,168,67,.2);
+      animation: brandPulse 3s ease-in-out infinite;
     }
 
     .topbar nav {
@@ -115,6 +118,7 @@
       background: #d5a843;
       border-color: #d5a843;
       transform: translateY(-2px);
+      box-shadow: 0 5px 18px rgba(213,168,67,.2);
     }
 
     .version {
@@ -149,6 +153,7 @@
       background: #d5a843;
       color: #071326;
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(213,168,67,.2);
     }
 
     /* ================================
@@ -435,8 +440,7 @@
       color: #f4d47d;
       font-size: 13px;
     }
-
-    /* ================================
+        /* ================================
        COMMUNITY
     ================================= */
 
@@ -464,6 +468,7 @@
       transform: translateY(-4px);
       border-color: #d5a843;
       background: rgba(213,168,67,.12);
+      box-shadow: 0 10px 25px rgba(0,0,0,.16);
     }
 
     .community-icon {
@@ -509,6 +514,13 @@
       border: 1px solid #2b506c;
       border-radius: 18px;
       background: linear-gradient(145deg, #102a43, #091a2c);
+      transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+    }
+
+    .lower-grid .panel:hover {
+      border-color: rgba(213,168,67,.55);
+      box-shadow: 0 12px 28px rgba(0,0,0,.16);
+      transform: translateY(-3px);
     }
 
     .lower-grid .panel:last-child {
@@ -548,6 +560,12 @@
       padding: 14px;
       border-radius: 13px;
       background: rgba(255,255,255,.035);
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .update-item:hover {
+      background: rgba(213,168,67,.07);
+      transform: translateX(-3px);
     }
 
     .update-icon {
@@ -608,6 +626,7 @@
       border: 1px solid #d5a843;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(213,168,67,.2);
+      animation: brandPulse 3s ease-in-out infinite;
     }
 
     .footer p {
@@ -617,8 +636,86 @@
     }
 
     /* ================================
+       CENTRAL LOGO ABOVE STATS
+    ================================= */
+
+    .stats-logo {
+      position: relative;
+      isolation: isolate;
+      width: 100%;
+      min-height: 190px;
+      margin: 8px auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .stats-logo::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(213,168,67,.42);
+      border-radius: 50%;
+      box-shadow:
+        0 0 35px rgba(213,168,67,.13),
+        inset 0 0 35px rgba(21,156,232,.12);
+      animation: logoHalo 7s linear infinite;
+    }
+
+    .stats-logo::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 230px;
+      height: 230px;
+      border: 1px dashed rgba(213,168,67,.2);
+      border-radius: 50%;
+      animation: logoHalo 18s linear infinite reverse;
+    }
+
+    .stats-logo img {
+      display: block;
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 18px rgba(213,168,67,.3));
+      animation: logoFloat 3.5s ease-in-out infinite, logoLight 3s ease-in-out infinite alternate;
+    }
+
+    .stats-logo .logo-orbit {
+      position: absolute;
+      color: #d5a843;
+      font-size: 19px;
+      text-shadow: 0 0 15px rgba(213,168,67,.65);
+      animation: orbitFloat 3s ease-in-out infinite;
+    }
+
+    .stats-logo .logo-orbit.one {
+      transform: translate(-105px,-48px);
+    }
+
+    .stats-logo .logo-orbit.two {
+      transform: translate(105px,48px);
+      animation-delay: 1.2s;
+    }
+
+    /* ================================
        ANIMATIONS
     ================================= */
+
+    @keyframes topbarEnter {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes brandPulse {
+      0%, 100% { box-shadow: 0 0 12px rgba(213,168,67,.15); }
+      50% { box-shadow: 0 0 25px rgba(213,168,67,.42); }
+    }
 
     @keyframes heroTextIn {
       from { opacity: 0; transform: translateY(25px); }
@@ -633,6 +730,66 @@
     @keyframes titleGlow {
       from { text-shadow: 0 5px 20px rgba(213,168,67,.08); }
       to { text-shadow: 0 5px 35px rgba(213,168,67,.28); }
+    }
+
+    @keyframes logoFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-10px) scale(1.035); }
+    }
+
+    @keyframes logoLight {
+      from { filter: drop-shadow(0 0 12px rgba(213,168,67,.2)); }
+      to { filter: drop-shadow(0 0 28px rgba(213,168,67,.55)); }
+    }
+
+    @keyframes logoHalo {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes orbitFloat {
+      0%, 100% { margin-top: 0; opacity: .65; }
+      50% { margin-top: -10px; opacity: 1; }
+    }
+
+    /* ظهور العناصر عند النزول في الصفحة */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity .75s ease,
+        transform .75s cubic-bezier(.2,.7,.2,1);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-grid .feature:nth-child(2) { --reveal-delay: 90ms; }
+    .feature-grid .feature:nth-child(3) { --reveal-delay: 180ms; }
+    .feature-grid .feature:nth-child(4) { --reveal-delay: 90ms; }
+    .feature-grid .feature:nth-child(5) { --reveal-delay: 180ms; }
+    .feature-grid .feature:nth-child(6) { --reveal-delay: 270ms; }
+
+    .stats > div {
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    .stats > div:hover {
+      transform: translateY(-5px);
+      border-color: #d5a843;
+      box-shadow: 0 10px 25px rgba(213,168,67,.1);
+    }
+
+    .download:not(.disabled) {
+      animation: buttonGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes buttonGlow {
+      0%, 100% { box-shadow: 0 8px 24px rgba(213,168,67,.16); }
+      50% { box-shadow: 0 8px 32px rgba(213,168,67,.38); }
     }
 
     /* ================================
@@ -779,6 +936,26 @@
       .footer-brand {
         align-self: flex-start;
       }
+
+      .stats-logo {
+        min-height: 165px;
+        margin-top: 0;
+      }
+
+      .stats-logo img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .stats-logo::before {
+        width: 160px;
+        height: 160px;
+      }
+
+      .stats-logo::after {
+        width: 190px;
+        height: 190px;
+      }
     }
 
     @media (max-width: 360px) {
@@ -810,11 +987,16 @@
         transition-duration: .01ms !important;
         scroll-behavior: auto !important;
       }
+
+      .reveal-item {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 <body>
-
+  
 <header class="topbar">
   <a class="brand" href="#home" aria-label="Vibe90 Home">
     <img class="brand-logo"
@@ -869,7 +1051,9 @@
         <a class="download disabled"
            id="download-button"
            href="#"
-           aria-disabled="true">
+           aria-disabled="true"
+           data-ar="تحميل Vibe90 APK"
+           data-en="Download Vibe90 APK">
           تحميل Vibe90 APK
         </a>
 
@@ -888,6 +1072,13 @@
       <div class="tagline">PLAY <i>•</i> COMPETE <i>•</i> BE LEGEND</div>
     </div>
   </section>
+
+  <!-- اللوجو الرئيسي المستعاد فوق إحصائيات اللعبة -->
+  <div class="stats-logo" aria-label="Vibe90 Logo">
+    <span class="logo-orbit one">✦</span>
+    <img src="assets/vibe90-logo.png" alt="Vibe90 Logo" loading="eager">
+    <span class="logo-orbit two">⚽</span>
+  </div>
 
   <section class="stats" aria-label="Game Features">
     <div>
@@ -1039,8 +1230,8 @@
         </p>
       </article>
     </div>
-    </section>
-      <section class="section" id="game-modes">
+          </section>
+            <section class="section" id="game-modes">
     <div class="section-heading">
       <p class="eyebrow">CHOOSE YOUR EXPERIENCE</p>
 
@@ -1346,8 +1537,9 @@
         </a>
 
       </div>
-      </article>
-          <article class="panel" id="support">
+    </article>
+
+    <article class="panel" id="support">
       <p class="eyebrow">WE'RE HERE TO HELP</p>
 
       <h2 data-ar="تحتاج مساعدة؟"
@@ -1398,6 +1590,8 @@
 
 <script>
 (function () {
+  "use strict";
+
   const config = window.VIBE90_CONFIG || {};
 
   const languageButton = document.getElementById("language-switch");
@@ -1409,59 +1603,91 @@
   const releaseDate = document.getElementById("release-date");
   const currentYear = document.getElementById("current-year");
 
+  const version = config.version || "v1.0.0";
+  const apkUrl = config.apkUrl || "";
+  const apkSize = config.apkSize || "68.5 MB";
+  const supportUrl = config.supportUrl || "https://wa.me/201065937975";
+
   let currentLanguage = "ar";
 
   try {
-    currentLanguage = localStorage.getItem("vibe90-language") || "ar";
+    const savedLanguage = localStorage.getItem("vibe90-language");
+
+    if (savedLanguage === "ar" || savedLanguage === "en") {
+      currentLanguage = savedLanguage;
+    }
   } catch (error) {
     currentLanguage = "ar";
   }
 
+  /* تحديث النصوص التي يتم إنشاؤها بواسطة JavaScript */
+  function updateDynamicContent() {
+    if (topVersion) {
+      topVersion.textContent =
+        (currentLanguage === "ar" ? "الإصدار " : "Version ") + version;
+    }
+
+    if (releaseMeta) {
+      releaseMeta.textContent = currentLanguage === "ar"
+        ? "الإصدار: " + version + " · حجم الملف: " + apkSize
+        : "Version: " + version + " · File size: " + apkSize;
+    }
+
+    if (releaseDate && config.releaseDate) {
+      const date = new Date(config.releaseDate + "T00:00:00");
+
+      if (!Number.isNaN(date.getTime())) {
+        releaseDate.textContent = date.toLocaleDateString(
+          currentLanguage === "ar" ? "ar-EG" : "en-US",
+          {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          }
+        );
+      }
+    }
+
+    if (currentYear) {
+      currentYear.textContent = new Date().getFullYear();
+    }
+  }
+
+  /* تغيير لغة الموقع */
   function applyLanguage(language) {
+    if (language !== "ar" && language !== "en") {
+      language = "ar";
+    }
+
     currentLanguage = language;
 
     document.documentElement.lang = language;
     document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
     document.querySelectorAll("[data-ar][data-en]").forEach(function (element) {
-      element.textContent = element.getAttribute(
+      const translatedText = element.getAttribute(
         language === "ar" ? "data-ar" : "data-en"
       );
+
+      if (translatedText !== null) {
+        element.textContent = translatedText;
+      }
     });
 
     if (languageButton) {
       languageButton.textContent = language === "ar" ? "EN" : "AR";
     }
 
+    updateDynamicContent();
+
     try {
       localStorage.setItem("vibe90-language", language);
     } catch (error) {
-      // استمرار عمل تغيير اللغة حتى لو التخزين غير متاح
+      // يستمر تغيير اللغة حتى لو التخزين غير متاح
     }
   }
 
-  if (languageButton) {
-    languageButton.addEventListener("click", function () {
-      applyLanguage(currentLanguage === "ar" ? "en" : "ar");
-    });
-  }
-
-  const version = config.version || "v1.0.0";
-  const apkUrl = config.apkUrl || "";
-  const apkSize = config.apkSize || "68.5 MB";
-  const supportUrl = config.supportUrl || "https://wa.me/201065937975";
-
-  if (topVersion) {
-    topVersion.textContent =
-      (currentLanguage === "ar" ? "الإصدار " : "Version ") + version;
-  }
-
-  if (releaseMeta) {
-    releaseMeta.textContent = currentLanguage === "ar"
-      ? "الإصدار: " + version + " · حجم الملف: " + apkSize
-      : "Version: " + version + " · File size: " + apkSize;
-  }
-
+  /* رابط تحميل اللعبة */
   if (downloadButton && apkUrl) {
     downloadButton.href = apkUrl;
     downloadButton.classList.remove("disabled");
@@ -1469,58 +1695,68 @@
     downloadButton.setAttribute("download", "");
   }
 
+  /* رابط الدعم */
   if (supportButton && supportUrl) {
     supportButton.href = supportUrl;
   }
 
-  if (releaseDate && config.releaseDate) {
-    const date = new Date(config.releaseDate + "T00:00:00");
-
-    if (!Number.isNaN(date.getTime())) {
-      releaseDate.textContent = date.toLocaleDateString(
-        currentLanguage === "ar" ? "ar-EG" : "en-US",
-        {
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        }
-      );
-    }
+  /* زر تغيير اللغة */
+  if (languageButton) {
+    languageButton.addEventListener("click", function () {
+      applyLanguage(currentLanguage === "ar" ? "en" : "ar");
+    });
   }
 
-  if (currentYear) {
-    currentYear.textContent = new Date().getFullYear();
-  }
-
+  /* تشغيل اللغة المحفوظة عند فتح الموقع */
   applyLanguage(currentLanguage);
 
-  if (topVersion) {
-    topVersion.textContent =
-      (currentLanguage === "ar" ? "الإصدار " : "Version ") + version;
+  /* ================================
+     SCROLL REVEAL ANIMATIONS
+  ================================= */
+
+  const revealSelectors = [
+    ".stats-logo",
+    ".stats > div",
+    ".section-heading",
+    ".feature",
+    ".screenshot-card",
+    ".panel",
+    ".footer-brand",
+    ".footer p"
+  ];
+
+  const revealElements = document.querySelectorAll(
+    revealSelectors.join(",")
+  );
+
+  if ("IntersectionObserver" in window) {
+    const revealObserver = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
+
+    revealElements.forEach(function (element) {
+      element.classList.add("reveal-item");
+      revealObserver.observe(element);
+    });
+  } else {
+    revealElements.forEach(function (element) {
+      element.classList.add("is-visible");
+    });
   }
 
-  if (releaseMeta) {
-    releaseMeta.textContent = currentLanguage === "ar"
-      ? "الإصدار: " + version + " · حجم الملف: " + apkSize
-      : "Version: " + version + " · File size: " + apkSize;
-  }
-
-  if (releaseDate && config.releaseDate) {
-    const date = new Date(config.releaseDate + "T00:00:00");
-
-    if (!Number.isNaN(date.getTime())) {
-      releaseDate.textContent = date.toLocaleDateString(
-        currentLanguage === "ar" ? "ar-EG" : "en-US",
-        {
-          year: "numeric",
-          month: "long",
-          day: "numeric"
-        }
-      );
-    }
-  }
 })();
 </script>
 
 </body>
-</html>
+    </html>
